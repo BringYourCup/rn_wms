@@ -54,7 +54,7 @@ export default class Main extends Component {
         <View key={i.toString()} style={styles.item}>
           <Text>{item.title}</Text>
           <View style={{ flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-            <View style={{ flex: 8, borderWidth: 1, borderColor: "grey", height: 40, alignItems: "center", flexDirection: "row" }}>
+            <View style={{ flex: 8, borderWidth: 1, borderColor: "grey", height: 40, alignItems: "center", flexDirection: "row", backgroundColor: "white" }}>
               <Text style={{ flex: 9, fontSize: 12, includeFontPadding: false, textAlignVertical: "center" }} numberOfLines={1}>
                 {item.fileName}
               </Text>
@@ -66,10 +66,10 @@ export default class Main extends Component {
             </View>
 
             <View style={{ flex: 2, marginLeft: 10 }}>
-              <TouchableOpacity style={{ borderWidth: 1, borderColor: "grey", height: 40, borderRadius: 5, justifyContent: "center", alignItems: "center", backgroundColor: "#77C4A3" }}
+              <TouchableOpacity style={{ borderWidth: 1, borderColor: "grey", height: 40, borderRadius: 5, justifyContent: "center", alignItems: "center", backgroundColor: "#2e363e" }}
                 onPress={() => { this.pickFile(i) }}
               >
-                <Text>찾아보기</Text>
+                <Text style={{ color: "white" }}>파일열기</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -113,21 +113,23 @@ export default class Main extends Component {
           </View>
         }
         <View style={styles.header}>
-          <Text>{"WMS 파일 변환 프로그램"}</Text>
+          <Text style={{ color: "#2e363e", fontSize: 16 }}>{"WMS 파일 변환 프로그램"}</Text>
         </View>
         <View style={styles.body}>
           {this.renderItem()}
         </View>
         <View style={styles.footer}>
           <View style={{ flex: 1, alignItems: "center", justifyContent: "center", flexDirection: "row" }}>
-            <TouchableOpacity style={{ borderWidth: 1, borderColor: "grey", height: 40, width: 80, borderRadius: 5, justifyContent: "center", alignItems: "center", backgroundColor: "#F5A200" }}
+            <TouchableOpacity style={{
+              borderWidth: 1, borderColor: "grey", height: 40, width: 80, borderRadius: 5, justifyContent: "center", alignItems: "center", backgroundColor: "#2e363e"
+            }}
               onPress={this.converse}
             >
-              <Text>변환</Text>
+              <Text style={{ color: "white" }}>변환</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{ marginLeft: 10, borderWidth: 1, borderColor: "grey", height: 40, width: 80, borderRadius: 5, justifyContent: "center", alignItems: "center" }}>
-              <Text>설정</Text>
-            </TouchableOpacity>
+            {/*<TouchableOpacity style={{ marginLeft: 10, borderWidth: 1, borderColor: "grey", height: 40, width: 80, borderRadius: 5, justifyContent: "center", alignItems: "center", backgroundColor: "#2e363e" }}>
+              <Text style={{ color: "white" }}>설정</Text>
+          </TouchableOpacity>*/}
           </View>
         </View>
       </View>
@@ -142,11 +144,12 @@ export default class Main extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#ffe812"
   },
   header: {
     justifyContent: "center",
     alignItems: "center",
-    height: 30
+    height: 30,
   },
   body: {
     flex: 1,
